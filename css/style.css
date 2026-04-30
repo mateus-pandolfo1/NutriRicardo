@@ -800,3 +800,12 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   Acessibilidade (A11y)
+   ========================================================================== */
+:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 4px;
+    border-radius: 4px;
+}

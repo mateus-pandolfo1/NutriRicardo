@@ -1,7 +1,7 @@
 /* ==========================================================================
    Variáveis Globais e Configurações
    ========================================================================== */
-   :root {
+:root {
     /* Cores Premium */
     --bg-dark: #0f1115;
     --bg-card: #181a20;
@@ -9,11 +9,11 @@
     --text-muted: #a0a0a0;
     --accent-gold: #c5a47e;
     --accent-gold-hover: #dcc2a3;
-    
+
     /* Tipografia */
     --font-sans: 'Inter', sans-serif;
     --font-serif: 'Playfair Display', serif;
-    
+
     /* Outros */
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     --border-radius: 12px;
@@ -61,7 +61,10 @@ ul {
 /* ==========================================================================
    Tipografia
    ========================================================================== */
-h1, h2, h3, .logo-name {
+h1,
+h2,
+h3,
+.logo-name {
     font-family: var(--font-serif);
     font-weight: 600;
 }
@@ -75,7 +78,9 @@ h2 {
 /* ==========================================================================
    Botões
    ========================================================================== */
-.btn-primary, .btn-primary-small, .btn-outline {
+.btn-primary,
+.btn-primary-small,
+.btn-outline {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -148,11 +153,12 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
 .logo-name {
@@ -169,6 +175,9 @@ h2 {
 }
 
 .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 32px;
@@ -223,7 +232,8 @@ h2 {
     width: 100%;
     height: 100%;
     z-index: 0;
-    background-image: url('../assets/Sala-de-Atendimento.jpeg'); /* fallback if no photo */
+    background-image: url('../assets/Sala-de-Atendimento.jpeg');
+    /* fallback if no photo */
     background-size: cover;
     background-position: center;
     opacity: 0.15;
@@ -270,7 +280,7 @@ h2 {
 .main-portrait {
     max-height: 70vh;
     border-radius: var(--border-radius);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(197, 164, 126, 0.2);
 }
 
@@ -326,7 +336,7 @@ section {
 
 .sobre-image img {
     border-radius: var(--border-radius);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .crn-badge {
@@ -340,7 +350,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .crn-badge span {
@@ -369,7 +379,7 @@ section {
 .especialidades {
     margin-top: 40px;
     padding-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .especialidades h4 {
@@ -403,14 +413,14 @@ section {
     background: var(--bg-card);
     padding: 40px 30px;
     border-radius: var(--border-radius);
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
 }
 
 .card:hover {
     transform: translateY(-10px);
     border-color: rgba(197, 164, 126, 0.3);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .card-icon {
@@ -502,7 +512,7 @@ section {
     border-radius: var(--border-radius);
     padding: 40px 30px;
     position: relative;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
     transition: var(--transition);
@@ -581,7 +591,7 @@ section {
     font-size: 0.9rem;
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .plano-features {
@@ -604,7 +614,8 @@ section {
     font-size: 0.85rem;
 }
 
-.plano-card .btn-primary, .plano-card .btn-outline {
+.plano-card .btn-primary,
+.plano-card .btn-outline {
     width: 100%;
 }
 
@@ -614,7 +625,7 @@ section {
 .footer {
     background-color: #0a0b0d;
     padding: 80px 0 30px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-grid {
@@ -624,19 +635,32 @@ section {
     margin-bottom: 60px;
 }
 
+.footer-logo {
+    width: 240px;
+    height: 240px;
+    object-fit: contain;
+    border: 1px solid var(--accent-gold);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 15px;
+    background: rgba(197, 164, 126, 0.05);
+}
+
 .footer-brand p {
     color: var(--text-muted);
     margin-top: 15px;
     font-size: 0.95rem;
 }
 
-.footer-contact h4, .footer-location h4 {
+.footer-contact h4,
+.footer-location h4 {
     color: var(--text-light);
     margin-bottom: 25px;
     font-size: 1.1rem;
 }
 
-.footer-contact p, .footer-location p {
+.footer-contact p,
+.footer-location p {
     color: var(--text-muted);
     margin-bottom: 15px;
     display: flex;
@@ -645,7 +669,8 @@ section {
     font-size: 0.95rem;
 }
 
-.footer-contact i, .footer-location i {
+.footer-contact i,
+.footer-location i {
     color: var(--accent-gold);
 }
 
@@ -656,7 +681,7 @@ section {
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-muted);
     font-size: 0.85rem;
 }
@@ -675,10 +700,21 @@ section {
     transform: translateY(0);
 }
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
 
 /* ==========================================================================
    Media Queries
@@ -688,24 +724,24 @@ section {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .hero-text h1 {
         font-size: 3rem;
     }
-    
+
     .hero-image {
         justify-content: center;
         margin-top: 40px;
     }
-    
+
     .sobre-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -715,12 +751,13 @@ section {
     .menu-toggle {
         display: block;
     }
-    
+
     .nav-links {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
+        transform: none;
         background: rgba(15, 17, 21, 0.98);
         flex-direction: column;
         padding: 30px 0;
@@ -728,19 +765,19 @@ section {
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: var(--transition);
     }
-    
+
     .nav-links.active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
-    
+
     .hero-overlay {
         background: linear-gradient(to bottom, rgba(15, 17, 21, 0.8), var(--bg-dark));
     }
-    
+
     .hero-text h1 {
         font-size: 2.5rem;
     }
-    
+
     .footer-grid {
         grid-template-columns: 1fr;
     }

@@ -1,0 +1,18 @@
+{
+  "name": "nutriricardo",
+  "version": "1.0.0",
+  "description": "Ricardo Salume Nutricionista - Website",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "nutricionista",
+    "nutrition",
+    "health"
+  ],
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}

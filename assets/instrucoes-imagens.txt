@@ -1,8 +1,0 @@
-Para que as imagens apareçam corretamente no site, renomeie as 4 fotos que você enviou e coloque-as nesta pasta (assets) com os seguintes nomes:
-
-1. A foto do Ricardo sentado na cadeira: renomeie para "ricardo-cadeira.jpg"
-2. A foto do Ricardo olhando pela janela: renomeie para "ricardo-janela.jpg"
-3. A foto da sala do consultório com as cadeiras: renomeie para "consultorio-sala.jpg"
-4. A foto do cantinho do café: renomeie para "consultorio-cafe.jpg"
-
-Nota: Se as suas fotos forem .png ou .jpeg, certifique-se de que a extensão bata com o nome no código, ou se preferir, mude o .jpg para .jpeg/.png no arquivo index.html.

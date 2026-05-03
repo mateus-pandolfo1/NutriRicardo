@@ -49,30 +49,30 @@ const SlideShell = forwardRef<SlideShellHandle, Props>(function SlideShell(
       gsap.set(toEl,   { rotateY: dir * 90, visibility: "visible", zIndex: 2 });
       gsap.set(fromEl, { zIndex: 1 });
 
-      // Spin up the DNA helix
-      gsap.to(cameraState, { helixSpeedMult: 22, duration: 0.22, ease: "power2.in" });
+      // Gently spin up the DNA helix
+      gsap.to(cameraState, { helixSpeedMult: 10, duration: 0.45, ease: "power1.in" });
 
       gsap
         .timeline({
           onComplete() {
             gsap.set(fromEl, { visibility: "hidden", zIndex: 0, rotateY: 0 });
             gsap.set(toEl,   { zIndex: 1 });
-            // Spin down helix
-            gsap.to(cameraState, { helixSpeedMult: 1, duration: 0.9, ease: "power3.out" });
+            // Slowly spin down helix
+            gsap.to(cameraState, { helixSpeedMult: 1, duration: 1.5, ease: "power2.out" });
             currentRef.current = next;
             setCurrentIdx(next);
             busyRef.current = false;
           },
         })
-        // Phase 1 — current page folds away
-        .to(fromEl, { rotateY: dir * -90, duration: 0.38, ease: "power2.in" })
+        // Phase 1 — current page folds away (smooth ease-in)
+        .to(fromEl, { rotateY: dir * -90, duration: 0.58, ease: "power1.in" })
         // Set camera target at the midpoint (DNA fully exposed)
         .call(() => {
           cameraState.targetZ = SLIDE_Z[next] ?? 4;
           cameraState.targetY = SLIDE_Y[next] ?? 0;
         })
-        // 100ms gap where only the spinning DNA is visible
-        .to(toEl, { rotateY: 0, duration: 0.38, ease: "power2.out" }, "+=0.1");
+        // Brief gap — DNA portal moment
+        .to(toEl, { rotateY: 0, duration: 0.58, ease: "power1.out" }, "+=0.08");
     },
     [total]
   );
@@ -85,7 +85,7 @@ const SlideShell = forwardRef<SlideShellHandle, Props>(function SlideShell(
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
       const now = Date.now();
-      if (now - lastWheel < 900) return;
+      if (now - lastWheel < 1400) return;
       lastWheel = now;
       goTo(currentRef.current + (e.deltaY > 0 ? 1 : -1));
     };
@@ -127,7 +127,7 @@ const SlideShell = forwardRef<SlideShellHandle, Props>(function SlideShell(
   return (
     <div
       className="relative w-screen h-screen overflow-hidden"
-      style={{ perspective: "1100px" }}
+      style={{ perspective: "1500px" }}
     >
       {slides.map((renderSlide, i) => (
         <div
